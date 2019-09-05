@@ -1,1 +1,13 @@
-console.log("Hi There");
+import express, { Request, Response } from "express";
+
+const app = express();
+
+app.get("/", (req: Request, res: Response) => {
+  res.send(`
+    <h1> Hi There! </h1>
+  `);
+});
+
+app.listen(3000, () => {
+  console.log("Listening on port 3000");
+});
